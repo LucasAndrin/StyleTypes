@@ -1,0 +1,52 @@
+div.single-input{
+    position: relative;
+}
+div.single-input label{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: text;
+    transition: all 0.2s ease-in-out;
+}
+div.single-input input{
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    color: #222;
+}
+/* Caso o input esteja focado ou esteja válido, mantém cores da borda e letra */
+div.single-input input:focus, 
+div.single-input input:valid{
+    border-bottom: 2px double cornflowerblue;
+    color: cornflowerblue;
+}
+/* Caso o input seja focado, translada label acima */
+div.single-input input:focus ~ label{
+    transform: translateY(-26px);
+    font-size: small;
+    /* color: cornflowerblue; */
+    transition: all 0.2s ease-in-out;
+}
+/* Caso o input esteja preenchido, mantém o label tranladado acima (precisa do required no input) */
+div.single-input input:valid ~ label{
+    background-color: transparent;
+    transform: translateY(-26px);
+    font-size: small;
+    color: cornflowerblue;
+}
+
+/* Tamanhos dos inputs em porcentagem */
+.input-width-25 input{
+    width:25%;
+}
+.input-width-50 input{
+    width:50%;
+}
+div.input-width-75 input{
+    width:75%;
+}
+div.input-width-100 input{
+    width:100%;
+}
+
